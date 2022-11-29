@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.Views.AddTerm"
+             Title="Add Term">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SaveTerm" Text="Save" Clicked="SaveTerm_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="CancelTerm" Text="Cancel" Clicked="CancelTerm_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Create a Term."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            
+            <Grid Padding="5" RowSpacing="1" ColumnSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <Label Grid.Row="0" Grid.Column="0" FontSize="Medium"
+                       VerticalTextAlignment="Center">Name</Label>
+                <Entry Text="{Binding Title}" x:Name="TermTitle"
+                       Placeholder="Enter Term Name"
+                       Grid.Row="0" Grid.Column="1"
+                       VerticalTextAlignment="Center"></Entry>
+
+                <Label Grid.Row="1" Grid.Column="0" FontSize="Medium"
+                       VerticalTextAlignment="Center">Start Date</Label>
+                <DatePicker Grid.Row="1" Grid.Column="1" 
+                            x:Name="StartDatePicker"></DatePicker>
+                <Label Grid.Row="2" Grid.Column="0" FontSize="Medium"
+                       VerticalTextAlignment="Center">End Date</Label>
+                <DatePicker Grid.Row="2" Grid.Column="1" 
+                            x:Name="EndDatePicker"></DatePicker>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
